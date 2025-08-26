@@ -58,5 +58,15 @@ La funcion "mostrarNombre" muestra los nombres que vamos agregando, la parte que
 ```
 cajaNombre.innerHTML = cajaNombre.innerHTML + "<br>" + nombres[nombres.length-1];
 ```
-Primero se 
+Esto toma lo que contiene el texto que se almacena primero, es decir, si se ingresa un primer nombre, simplemente se agrea, pero en el segundo nombre se agrega un salto de linea denotado por <br> el cual es el salto de linea de HTML, esto para organizarlo, una vez agregado el salto, se agrega el último elemento del arreglo, por lo que este código solo agrega el último nombre agregado.
+La función limpiarCuadro solo borra lo escrito en la caja.
 
+```
+function sortearAmigo(){
+    let numeroAleatorio = Math.floor(Math.random()*(nombres.length));
+    console.log(`El numero aleatorio es ${numeroAleatorio}`);
+    let resultado = document.querySelector('#resultado');
+    resultado.innerHTML = `El amigo secreto es: ${nombres[numeroAleatorio]}`;
+}
+```
+Esta función consiste en seleccionar un sumero aleatorio con Math.random, multiplicado por la cantidad de nombres asignados para que el numero aleatorio este entre estacantidad de valores, tambien se usa Math.floor para que se elimine el punto decimal y pueda se usado como indicador de posicion en "nombres[numeroAleatorio]", cuando se selecciona el numero aleatorio, este es la posicion del arreglo de nombres que terminara por imprimirse en la página.
